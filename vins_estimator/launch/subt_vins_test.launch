@@ -1,0 +1,13 @@
+<launch>
+    
+    <!-- Start ROSFlight for imu/data topic -->
+    <include file="/home/ohrad/catkin_ws/src/rosflight/rosflight/launch/rf.launch" />
+
+    <!-- Start realsense node for /camera/color/image_raw topic -->
+    <include file="/home/ohrad/catkin_ws/realsense/realsense_camera2/launch/rs_camera.launch" />
+
+    <!-- Start the VINS-mono node -->
+    <include file="/home/ohrad/catkin_ws/VINS-mono/vins_estimator/launch/realsense_color.launch" />
+    
+
+</launch>
