@@ -11,6 +11,6 @@
     -->
 
     <!-- Start optitrack for ground truth testing -->
-    <include file="/opt/ros/melodic/share/vrpn_client_ros/launch/sample.launch" />
-
+<!--    <include file="/opt/ros/melodic/share/vrpn_client_ros/launch/sample.launch" />
+-->
 </launch>

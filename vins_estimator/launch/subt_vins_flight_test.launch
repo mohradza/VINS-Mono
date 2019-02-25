@@ -2,7 +2,8 @@
     
     <!-- Start ROSFlight for imu/data topic -->
     <include file="/home/ohrad/catkin_ws/src/rosflight/rosflight/launch/rf.launch" />
-
+    <include file="/home/ohrad/catkin_ws/src/roscopter/launch/load_params.launch" />
+    
     <!-- Start realsense node for /camera/color/image_raw topic -->
     <include file="/home/ohrad/catkin_ws/src/realsense/realsense2_camera/launch/rs_camera.launch" />
 
@@ -17,6 +18,6 @@
     <node pkg="roscopter" type="simple_command_pub.py" name="waypoint_commander" output="screen" />
 
     <!-- Start the roscopter controller -->
-    <node pkg="roscopter" type="vins_controller" name="controller_node" output="screen" />
+    <!-- <node pkg="roscopter" type="vins_controller" name="controller_node" output="screen" /> -->
 
 </launch>
