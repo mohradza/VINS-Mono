@@ -13,4 +13,10 @@
     <!-- Start optitrack for ground truth testing -->
     <include file="/opt/ros/melodic/share/vrpn_client_ros/launch/sample.launch" />
 
+    <!-- Start the roscopter waypoint commander -->
+    <node pkg="roscopter" type="simple_command_pub.py" name="waypoint_commander" output="screen" />
+
+    <!-- Start the roscopter controller -->
+    <node pkg="roscopter" type="vins_controller" name="controller_node" output="screen" />
+
 </launch>

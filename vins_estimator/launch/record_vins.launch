@@ -1,0 +1,3 @@
+<launch>
+   <node pkg="rosbag" type="record" name="vins_record" output="screen" args="record -o /home/ohrad/Desktop/vins_data /feature_tracker/feature_img /imu/data /vins_estimator/odometry /attitude/euler /vrpn_client_node/SubT/pose" />
+</launch>
