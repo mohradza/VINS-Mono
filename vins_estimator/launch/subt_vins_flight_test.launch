@@ -5,7 +5,7 @@
     <include file="/home/ohrad/catkin_ws/src/roscopter/launch/load_params.launch" />
     
     <!-- Start realsense node for /camera/color/image_raw topic -->
-    <include file="/home/ohrad/catkin_ws/src/realsense/realsense2_camera/launch/rs_camera.launch" />
+    <include file="/home/ohrad/catkin_ws/src/realsense/realsense2_camera/launch/rs_rgbd.launch" />
 
     <!-- Start the VINS-mono node -->
    <!-- <include file="/home/ohrad/catkin_ws/src/VINS-Mono/vins_estimator/launch/realsense_color.launch" />

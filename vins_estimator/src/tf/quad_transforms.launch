@@ -1,0 +1,7 @@
+<launch>
+  
+  <!-- transform from camera frame camera_link frame -->
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_tf" args="0 0 0 .5 -.5 .5 .5 camera camera_link 10"/>
+
+</launch>
+
