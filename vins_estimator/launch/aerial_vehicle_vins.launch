@@ -1,0 +1,17 @@
+<launch>
+
+   <!-- Launch the sensors used for VINS and Octomap -->
+   <include file="/home/ohrad/catkin_ws/src/VINS-Mono/vins_estimator/launch/vins_sensors.launch" />
+    
+   <!-- Start the VINS-mono node -->
+<!--   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch"
+         args="8 vins_estimator realsense_infra.launch" output="screen"/>
+-->
+   <!-- <node pkg="octomap_server" name="vins_tf_pub" type="vins_tf_pub" output="screen" />
+-->
+   <!-- Publish the static transforms between the cameras -->
+   <node pkg="tf" type="static_transform_publisher" name="cam2odom" args="0 0 0 0 0 0 1 /pstack /camera_link  100"/>
+   <node pkg="tf" type="static_transform_publisher" name="depth2odom" args=".05 0 0 0 0 0 1  /pstack /depth_link  100"/>
+   <node pkg="tf" type="static_transform_publisher" name="vins2pstack" args="0 0 0 1 0 0 0  /body /pstack  100"/>
+
+</launch>

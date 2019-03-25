@@ -1,0 +1,3 @@
+<launch>
+   <node pkg="rosbag" type="record" name="vins_record" output="screen" args="record -o /home/ohrad/Desktop/vins_data /octomap_final_output /vins_estimator/odometry /tf" />
+</launch>
