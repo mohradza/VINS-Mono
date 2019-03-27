@@ -411,6 +411,8 @@ void pubRelocalization(const Estimator &estimator)
     odometry.pose.pose.position.x = estimator.relo_relative_t.x();
     odometry.pose.pose.position.y = estimator.relo_relative_t.y();
     odometry.pose.pose.position.z = estimator.relo_relative_t.z();
+
+
     odometry.pose.pose.orientation.x = estimator.relo_relative_q.x();
     odometry.pose.pose.orientation.y = estimator.relo_relative_q.y();
     odometry.pose.pose.orientation.z = estimator.relo_relative_q.z();

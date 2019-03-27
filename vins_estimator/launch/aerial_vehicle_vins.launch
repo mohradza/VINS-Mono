@@ -1,5 +1,8 @@
 <launch>
 
+<!-- This script launches the sensors needed for vins as well -->
+<!-- as the static transforms needed to create the proper tf tree -->
+
    <!-- Launch the sensors used for VINS and Octomap -->
    <include file="/home/ohrad/catkin_ws/src/VINS-Mono/vins_estimator/launch/vins_sensors.launch" />
     

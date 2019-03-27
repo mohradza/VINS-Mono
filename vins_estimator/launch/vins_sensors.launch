@@ -1,12 +1,13 @@
 <launch>
+<!-- This script launches both realsense cameras as well as the microstrain imu -->
 
-  <arg name="serial_no_camera1"                         default="832112072986"/>                        <!-- Note: Replace with actual serial number -->
-  <arg name="serial_no_camera2"                         default="832112070589"/>                        <!-- Note: Replace with actual serial number -->
-  <arg name="camera1"                                   default="camera"/>              <!-- Note: Replace with camera name -->
-  <arg name="camera2"                                   default="depth"/>               <!-- Note: Replace with camera name -->
-  <arg name="tf_prefix_camera1"         default="$(arg camera1)"/>
-  <arg name="tf_prefix_camera2"         default="$(arg camera2)"/>
-  <arg name="initial_reset"             default="true"/>
+  <arg name="serial_no_camera1"   default="832112072986"/>   <!-- Note: This is the front camera -->
+  <arg name="serial_no_camera2"   default="832112070589"/>   <!-- Note: This is the back camera -->
+  <arg name="camera1"             default="camera"/>      
+  <arg name="camera2"             default="depth"/>  
+  <arg name="tf_prefix_camera1"   default="$(arg camera1)"/>
+  <arg name="tf_prefix_camera2"   default="$(arg camera2)"/>
+  <arg name="initial_reset"       default="true"/>
   <arg name="serial_no"           default=""/>
   <arg name="json_file_path"      default=""/>
   <arg name="manager"             default="realsense2_camera_manager"/>
@@ -17,7 +18,7 @@
 
   <arg name="depth_width"         default="640"/>
   <arg name="depth_height"        default="480"/>
-  <arg name="enable_depth"        default="false"/>
+  <arg name="enable_depth"        default="true"/>
 
   <arg name="infra_width"         default="640"/>
   <arg name="infra_height"        default="480"/>
@@ -71,7 +72,6 @@
 
   <!-- COMPASS CAMERA -->
   <group ns="$(arg camera1)">
-
     <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
       <arg name="serial_no"             value="$(arg serial_no_camera1)"/>
       <arg name="tf_prefix"                     value="$(arg tf_prefix_camera1)"/>
@@ -99,7 +99,7 @@
       <arg name="infra_width"              value="$(arg infra_width)"/>
       <arg name="infra_height"             value="$(arg infra_height)"/>
       <arg name="enable_infra1"            value="$(arg enable_infra1)"/>
-      <arg name="enable_infra2"            value="true"/>
+      <arg name="enable_infra2"            value="false"/>
 
       <arg name="fisheye_fps"              value="$(arg fisheye_fps)"/>
       <arg name="depth_fps"                value="$(arg depth_fps)"/>
@@ -202,9 +202,7 @@
 
   </group>
 
-
 <!-- Launch the microstrain -->
 <include file="/home/ohrad/catkin_ws/src/microstrain/launch/3dm_gx5_15.launch" />
-
 
 </launch>
