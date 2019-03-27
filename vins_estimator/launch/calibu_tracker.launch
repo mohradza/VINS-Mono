@@ -1,0 +1,34 @@
+<launch>
+
+   <!-- Global to Ground Calibu Target -->
+   <node pkg="tf" type="static_transform_publisher" name="global2ground" args="0 0 0 0 0 0 1 /global /calibu_target_ground 100"/>
+
+   <!-- Ground Calibu Target to Calibu Target -->
+   <node pkg="tf" type="static_transform_publisher" name="ground2target" args="0 0 0.81915 0 0 0 1 /calibu_target_ground /calibu_target_top  100"/>
+
+   <!-- Calibu Target to Camera Link t0 -->
+<!--   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch_calibu_tracker_ros"
+         args="1 calibu_tracker_ros run_calibu_tracker_ros.launch" output="screen"/>
+-->
+   <!-- Camera Link t0 to Pstack -->
+   <node pkg="tf" type="static_transform_publisher" name="camera2pstack" args="0 0 0 0 0 0 1 /camera_link_t0 /pstack_t0 100"/>
+
+   <!-- Pstack to Vins (Body t0) -->
+   <node pkg="tf" type="static_transform_publisher" name="pstack2vins" args="0 0 0 -1 0 0 0  /pstack_t0 /body_t0  100"/>
+
+   <!-- Vins (Body t0) to World -->
+   <node pkg="tf" type="static_transform_publisher" name="vins2world" args="0 0 0 -1 0 0 0  /body_t0 /world  100"/>
+
+   <!-- World to Body -->
+   <!-- (VINS-Mono) -->
+
+   <!-- Body to Pstack -->
+   <node pkg="tf" type="static_transform_publisher" name="vins2pstack" args="0 0 0 1 0 0 0  /body /pstack  100"/>
+
+   <!-- Pstack to Camera Link -->
+   <node pkg="tf" type="static_transform_publisher" name="pstack2camera" args="0 0 0 0 0 0 1 /pstack /camera_link  100"/>
+
+   <!-- Pstack to Depth Link -->
+   <node pkg="tf" type="static_transform_publisher" name="pstack2depth" args=".05 0 0 0 0 0 1  /pstack /depth_link  100"/>
+
+</launch>

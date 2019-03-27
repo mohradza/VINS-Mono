@@ -1,8 +1,9 @@
 <launch>
 <!-- This script launches both realsense cameras as well as the microstrain imu -->
 
-  <arg name="serial_no_camera1"   default="832112072986"/>   <!-- Note: This is the front camera -->
-  <arg name="serial_no_camera2"   default="832112070589"/>   <!-- Note: This is the back camera -->
+  <arg name="serial_no_camera1"   default="832112071363"/>   <!-- Note: This is the SLAM camera -->
+  <arg name="serial_no_camera2"   default="832112071379"/>   <!-- Note: This is the MAPPING camera -->
+
   <arg name="camera1"             default="camera"/>      
   <arg name="camera2"             default="depth"/>  
   <arg name="tf_prefix_camera1"   default="$(arg camera1)"/>
