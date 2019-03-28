@@ -1,12 +1,7 @@
 <launch>
-<!--    <arg name="config_path" default = "$(find feature_tracker)/../config/realsense/P01_realsense_infra_config.yaml" /> -->
 
-<arg name="config_path" default="/home/ohrad/catkin_ws/src/VINS-Mono/config/realsense/P01_realsense_infra_config.yaml"/>
-<arg name="vins_path" default="/home/ohrad/catkin_ws/src/VINS-Mono/"/>
-
-<!--
-        <arg name="vins_path" default = "$(find feature_tracker)/../config/../" />
--->
+<arg name="config_path" default = "$(find feature_tracker)/../config/realsense$(env ROS_NAMESPACE)_realsense_infra_config.yaml" /> -->
+<arg name="vins_path" default = "$(find feature_tracker)/../config/../" />
 
     <node name="feature_tracker" pkg="feature_tracker" type="feature_tracker" output="log">
         <param name="config_file" type="string" value="$(arg config_path)" />
