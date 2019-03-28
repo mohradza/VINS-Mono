@@ -7,9 +7,11 @@
    <node pkg="tf" type="static_transform_publisher" name="ground2target" args="0 0 0.81915 0 0 0 1 /calibu_target_ground /calibu_target_top  100"/>
 
    <!-- Calibu Target to Camera Link t0 -->
-<!--   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch_calibu_tracker_ros"
+<!--
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch_calibu_tracker_ros"
          args="1 calibu_tracker_ros run_calibu_tracker_ros.launch" output="screen"/>
 -->
+
    <!-- Camera Link t0 to Pstack -->
    <node pkg="tf" type="static_transform_publisher" name="camera2pstack" args="0 0 0 0 0 0 1 /camera_link_t0 /pstack_t0 100"/>
 
