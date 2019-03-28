@@ -1,0 +1,21 @@
+<launch>
+
+   <!-- Launch the sensors used for VINS and Octomap -->
+   <include file="$(find vins_estimator)/launch/$(env ROS_NAMESPACE)_vins_sensors.launch"/>
+    
+   <!-- Start the VINS-mono node -->
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch"
+         args="8 vins_estimator realsense_infra.launch" output="screen"/>
+
+<!--
+   <include file="$(find vins_estimator)/launch/calibu_tracker.launch"/>
+-->
+   <include file="$(find octomap_server)launch/vins_octomap.launch"/>
+
+   <node pkg="rosflight" name="vins2odom" type="vins2odom"/>
+
+   <include file="$(find bezier_planer)/launch/subt_vins_planner.launch"/>
+
+   <include file="$(find msfm3d)/launch/msfm3d.launch" />
+
+</launch>
