@@ -18,8 +18,11 @@
 
    <!-- Launch Planner -->
    <include file="$(find bezier_planer)/launch/subt_vins_planner.launch"/>
-
+ 
    <!-- Launch Exploration -->
    <include file="$(find msfm3d)/launch/msfm3d.launch" />
+
+   <!-- Launch Collaborative Mapping -->
+   <include file="$(find vins_estimator)/launch/collab_mapping.launch"/>
 
 </launch>

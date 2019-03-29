@@ -1,0 +1,14 @@
+<launch>
+
+   <!-- LAUNCH OCTOMAP MSG THROTTLE (GLOBAL MAPPING) -->
+   <node pkg="topic_tools" type="throttle" name="topic_tools_throttle_octomap_binary" args="messages /$(env ROS_HOSTNAME)/octomap_binary 1 /$(env ROS_HOSTNAME)/octomap_binary_throttle" output="screen"/>
+
+   <!-- LAUNCH OCTOMAP TO PCL (GLOBAL MAPPING) -->
+   <include file="$(find octomap_to_pcl)/launch/octomap_to_pcl.launch">
+   </include>
+
+   <!-- LAUNCH MERGE PCL (GLOBAL MAPPING) -->
+   <include file="$(find merge_pcl)/launch/merge_pcl.launch">
+   </include>
+
+</launch>
