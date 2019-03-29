@@ -13,16 +13,21 @@
    <!-- Launch Octomap -->
    <include file="$(find octomap_server)launch/vins_octomap.launch"/>
 
+
    <!-- Launch vins2odom -->
    <node pkg="rosflight" name="vins2odom" type="vins2odom"/>
 
    <!-- Launch Planner -->
+<!--
    <include file="$(find bezier_planer)/launch/subt_vins_planner.launch"/>
- 
+-->
+p 
    <!-- Launch Exploration -->
+<!--
    <include file="$(find msfm3d)/launch/msfm3d.launch" />
+-->
 
    <!-- Launch Collaborative Mapping -->
-   <include file="$(find vins_estimator)/launch/collab_mapping.launch"/>
-
+<!--   <include file="$(find vins_estimator)/launch/collab_mapping.launch"/>
+-->
 </launch>
