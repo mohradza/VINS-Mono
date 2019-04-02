@@ -4,8 +4,8 @@
 <!-- as the static transforms needed to create the proper tf tree -->
 
    <!-- Launch the sensors used for VINS and Octomap -->
-   <include file="/home/ohrad/catkin_ws/src/VINS-Mono/vins_estimator/launch/vins_sensors.launch" />
-    
+   <include file="$(find vins_estimator)/launch/$(env ROS_HOSTNAME)_vins_sensors.launch"/>
+
    <!-- Start the VINS-mono node -->
 <!--   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch"
          args="8 vins_estimator realsense_infra.launch" output="screen"/>
