@@ -7,9 +7,8 @@
    <include file="$(find vins_estimator)/launch/$(env ROS_HOSTNAME)_vins_sensors.launch"/>
 
    <!-- Start the VINS-mono node -->
-<!--   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch"
-         args="8 vins_estimator realsense_infra.launch" output="screen"/>
--->
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh" name="timed_roslaunch"
+         args="8 vins_estimator realsense_infra_aerial.launch" output="screen"/>
    <!-- <node pkg="octomap_server" name="vins_tf_pub" type="vins_tf_pub" output="screen" />
 -->
    <!-- Publish the static transforms between the cameras -->
